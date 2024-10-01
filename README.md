@@ -2,7 +2,12 @@
 
 Brilliant mentoring platform for the Bearmentor community, for people and organization. A place for tech and creating professionals to mentor each others. This code is open source, free to use, with premium options.
 
-Links:
+Current links:
+
+- Web: <https://web.bearmentor.com>
+- Repo: <https://github.com/bearmentor/bearmentor-web>
+
+Future links:
 
 - Web: <https://bearmentor.com>
   - Repo: <https://github.com/bearmentor/bearmentor-web>
@@ -15,8 +20,10 @@ Designs:
 
 References:
 
+- [⚛️React](https://react.dev)
 - [💿Remix](https://remix.run)
 - [🐶Dogokit Akita](https://github.com/dogokit/dogokit-akita)
+- [Tailwind CSS](https://tailwindcss.com)
 
 ## Development
 
@@ -40,13 +47,7 @@ Run the app in production mode:
 bun start
 ```
 
-### DIY
-
 Make sure to deploy the output of `bun build`
 
 - `build/server`
 - `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
