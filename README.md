@@ -1,6 +1,8 @@
 # 🐻Bearmentor Web
 
-Brilliant mentoring platform for the Bearmentor community, for people and organization. A place for tech and creating professionals to mentor each others. This code is open source, free to use, with premium options.
+Brilliant mentoring platform for the Bearmentor community, for people and
+organization. A place for tech and creating professionals to mentor each others.
+This code is open source, free to use, with premium options.
 
 Current links:
 
@@ -20,10 +22,10 @@ Designs:
 
 References:
 
-- [⚛️React](https://react.dev)
-- [💿Remix](https://remix.run)
-- [🐶Dogokit Akita](https://github.com/dogokit/dogokit-akita)
+- [React](https://react.dev)
+- [Remix](https://remix.run)
 - [Tailwind CSS](https://tailwindcss.com)
+- [Dogokit Akita](https://github.com/dogokit/dogokit-akita)
 
 ## Development
 

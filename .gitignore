@@ -1,5 +1,6 @@
-node_modules
-
+__*.md
+.DS_Store
+.env
 /.cache
 /build
-.env
+node_modules
