@@ -38,21 +38,27 @@ export function Mentors({
         id="home-mentors"
         className="flex max-w-5xl flex-wrap justify-center gap-6 sm:justify-start"
       >
-        {mentors.map(mentor => (
-          <li
-            key={mentor.slug}
-            className="flex w-20 flex-col items-center gap-2 sm:w-28"
-          >
-            <Avatar className="size-20 sm:size-24">
-              <AvatarImage src={`${mentor.imageURL}-/preview/200x200/`} />
-              <AvatarFallback className="text-3xl">
-                {getNameInitials(mentor.name)}
-              </AvatarFallback>
-            </Avatar>
+        {mentors.map(mentor => {
+          const mentorImageURL = mentor.imageURL
+            ? `${mentor.imageURL}-/preview/200x200/`
+            : undefined
 
-            <span className="text-center text-xs">{mentor.name}</span>
-          </li>
-        ))}
+          return (
+            <li
+              key={mentor.slug}
+              className="flex w-20 flex-col items-center gap-2 sm:w-28"
+            >
+              <Avatar className="size-20 sm:size-24">
+                <AvatarImage src={mentorImageURL} />
+                <AvatarFallback className="text-3xl">
+                  {getNameInitials(mentor.name)}
+                </AvatarFallback>
+              </Avatar>
+
+              <span className="text-center text-xs">{mentor.name}</span>
+            </li>
+          )
+        })}
       </ul>
 
       <ul
