@@ -1,7 +1,8 @@
+import { NavLinkProps } from "@remix-run/react"
 import { type VariantProps } from "class-variance-authority"
 
 import { Button, buttonVariants } from "~/components/ui/button"
-import { Link, type LinkProps } from "~/components/ui/remix-link"
+import { Link, NavLink, type LinkProps } from "~/components/ui/remix-link"
 import { cn } from "~/utils/cn"
 
 interface ButtonLinkProps
@@ -34,7 +35,7 @@ const ButtonLink = ({
 ButtonLink.displayName = "ButtonLink"
 
 interface ButtonNavLinkProps
-  extends LinkProps,
+  extends NavLinkProps,
     VariantProps<typeof buttonVariants> {}
 
 const ButtonNavLink = ({
@@ -46,12 +47,12 @@ const ButtonNavLink = ({
   ...props
 }: ButtonNavLinkProps) => {
   return (
-    <Link
-      className={cn(buttonVariants({ variant, size, mode, className }))}
+    <NavLink
       {...props}
+      className={cn(buttonVariants({ variant, size, mode, className }))}
     >
       {children}
-    </Link>
+    </NavLink>
   )
 }
 ButtonNavLink.displayName = "ButtonNavLink"

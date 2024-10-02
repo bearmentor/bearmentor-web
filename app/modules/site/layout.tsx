@@ -1,10 +1,13 @@
+import { SiteFloatingButton } from "~/modules/site/floating-button"
 import { SiteFooter } from "~/modules/site/footer"
-import { SiteNavbarLarge } from "~/modules/site/navbar"
+import { SiteNavbar } from "~/modules/site/navbar"
 
 export function SiteLayout({ children }: React.ComponentProps<"main">) {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteNavbarLarge />
+      <SiteNavbar />
+
+      <SiteFloatingButton />
 
       <main className="flex-[1]">{children}</main>
 

@@ -20,7 +20,7 @@ export function SiteHero({
           backgroundSize: "cover",
         }}
         className={cn(
-          "rounded-xl p-8 sm:p-16 md:p-24 lg:p-32",
+          "rounded-3xl p-8 pt-16 sm:p-16 sm:pt-24 md:p-24 md:pt-28 lg:p-28 lg:pt-36",
           !backgroundImage
             ? overlayColor || "bg-gradient-to-b from-amber-700 to-amber-900"
             : "bg-transparent bg-center",
@@ -47,7 +47,7 @@ export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
 
 export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
   return (
-    <h1 className="text-balance text-3xl font-bold text-amber-50 sm:text-4xl md:text-5xl lg:text-6xl">
+    <h1 className="text-balance text-3xl font-bold tracking-tight text-amber-50 sm:text-4xl md:text-5xl lg:text-6xl">
       {children}
     </h1>
   )
@@ -55,7 +55,7 @@ export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
 
 export function SiteHeroDescription({ children }: React.ComponentProps<"p">) {
   return (
-    <p className="max-w-2xl text-balance text-sm text-white sm:text-sm md:text-base lg:text-lg">
+    <p className="max-w-2xl text-balance text-sm tracking-tight text-white sm:text-sm md:text-base lg:text-lg">
       {children}
     </p>
   )

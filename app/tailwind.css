@@ -63,7 +63,11 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply cursor-default bg-background text-foreground transition-colors;
+    @apply selection:bg-primary/90 selection:text-secondary;
+  }
+  img {
+    @apply selection:bg-primary/25;
   }
   h1,
   h2,
@@ -73,8 +77,30 @@ body {
   h6 {
     @apply font-display leading-relaxed tracking-tight;
   }
+  h1 {
+    @apply text-4xl sm:text-5xl;
+  }
+  h2 {
+    @apply text-2xl sm:text-3xl;
+  }
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+  h4 {
+    @apply text-lg leading-snug sm:text-xl;
+  }
+  h5 {
+    @apply text-base leading-snug sm:text-lg;
+  }
+  h6 {
+    @apply text-base leading-snug;
+  }
   p {
     @apply leading-relaxed;
+  }
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    @apply dark:opacity-0;
   }
 }
 
