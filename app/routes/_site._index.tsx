@@ -220,9 +220,9 @@ function FeaturedPrograms() {
       heading="Featured Programs"
       description="Choose based on your goal, preference, timeline, and budget."
     >
-      <Card size="tall" className="bg-teal-100">
+      <Card size="tall" className="border-teal-200 bg-teal-100">
         <CardHeader>
-          <CardTitle className="text-balance text-5xl leading-normal">
+          <CardTitle size="featured" className="text-teal-800">
             Full Stack Web Development: Online Bootcamp
           </CardTitle>
         </CardHeader>
@@ -234,7 +234,7 @@ function FeaturedPrograms() {
             <ButtonAnchor
               href="https://bearmentor.com"
               display="with-icon"
-              variant="secondary"
+              variant="ghost"
             >
               <IconRead className="size-4" /> Learn More
             </ButtonAnchor>
@@ -242,9 +242,9 @@ function FeaturedPrograms() {
         </CardContent>
       </Card>
 
-      <Card size="tall" className="bg-cyan-100">
+      <Card size="tall" className="border-cyan-200 bg-cyan-100">
         <CardHeader>
-          <CardTitle className="text-balance text-5xl leading-normal">
+          <CardTitle size="featured" className="text-cyan-800">
             Private 1-on-1 Mentorship: Online or Offline
           </CardTitle>
         </CardHeader>
@@ -256,7 +256,7 @@ function FeaturedPrograms() {
             <ButtonAnchor
               href="https://bearmentor.com/mentorship"
               display="with-icon"
-              variant="secondary"
+              variant="ghost"
             >
               <IconRead className="size-4" /> Learn More
             </ButtonAnchor>

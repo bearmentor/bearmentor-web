@@ -11,8 +11,8 @@ const cardVariants = cva(
         default: "bg-card text-card-foreground",
       },
       size: {
-        base: "p-4",
-        tall: "px-4 py-12",
+        base: "p-2 sm:p-4",
+        tall: "sm:px-4 sm:py-12",
       },
     },
     defaultVariants: {
@@ -45,16 +45,27 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
+const cardTitleVariants = cva(
+  "text-2xl font-sans font-semibold leading-none tracking-tight",
+  {
+    variants: {
+      size: {
+        featured:
+          "text-balance text-3xl leading-normal md:text-4xl lg:text-5xl",
+      },
+    },
+    defaultVariants: {},
+  },
+)
+
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLHeadingElement>
->(({ className, children, ...props }, ref) => (
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement> &
+    VariantProps<typeof cardTitleVariants>
+>(({ className, size, children, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn(
-      "text-2xl font-semibold leading-none tracking-tight",
-      className,
-    )}
+    className={cn(cardTitleVariants({ size }), className)}
     {...props}
   >
     {children}
