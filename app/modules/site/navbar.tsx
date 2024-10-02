@@ -7,18 +7,19 @@ import { cn } from "~/utils/cn"
 type NavLinkItem = {
   text: string
   to: string
-  type?: "link" | "button-link" | "button-anchor"
+  mode?: "external"
+  component?: "link" | "button-link" | "button-anchor"
 }
 
 const leftNavLinks: NavLinkItem[] = [
-  { text: "Mentors", to: "/mentors" },
-  { text: "Members", to: "/members" },
-  { text: "Projects", to: "/projects" },
+  { text: "Mentors", to: "/mentors", mode: "external" },
+  { text: "Members", to: "/members", mode: "external" },
+  { text: "Projects", to: "/projects", mode: "external" },
 ]
 
 const rightNavLinks: NavLinkItem[] = [
   { text: "Mentorship", to: "/mentorship" },
-  { text: "Join Bootcamp", to: "/bootcamp", type: "button-link" },
+  { text: "Join Bootcamp", to: "/bootcamp", component: "button-link" },
 ]
 
 export function SiteNavbar() {
@@ -50,35 +51,40 @@ export function SiteNavbarLarge() {
 export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
   return (
     <>
-      {navLinks.map(({ text, to, type }) => (
-        <li key={to}>
-          {!type && (
-            <NavLink
-              to={to}
-              className={({ isActive }) =>
-                cn(
-                  "hover-opacity font-semibold tracking-tighter",
-                  isActive && "text-primary",
-                )
-              }
-            >
-              {text}
-            </NavLink>
-          )}
+      {navLinks.map(({ text, to, mode, component }) => {
+        const isExternal = mode === "external"
 
-          {type === "button-link" && (
-            <ButtonNavLink to={to} variant="navbar" mode="cta">
-              {text}
-            </ButtonNavLink>
-          )}
+        return (
+          <li key={to}>
+            {!component && (
+              <NavLink
+                to={to}
+                isExternal={isExternal}
+                className={({ isActive }) =>
+                  cn(
+                    "hover-opacity font-semibold tracking-tighter",
+                    isActive && "text-primary",
+                  )
+                }
+              >
+                {text}
+              </NavLink>
+            )}
 
-          {type === "button-anchor" && (
-            <ButtonAnchor href={to} variant="navbar" mode="cta">
-              {text}
-            </ButtonAnchor>
-          )}
-        </li>
-      ))}
+            {component === "button-link" && (
+              <ButtonNavLink to={to} variant="tertiary" mode="navbar">
+                {text}
+              </ButtonNavLink>
+            )}
+
+            {component === "button-anchor" && (
+              <ButtonAnchor href={to} variant="tertiary" mode="navbar">
+                {text}
+              </ButtonAnchor>
+            )}
+          </li>
+        )
+      })}
     </>
   )
 }

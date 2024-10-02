@@ -49,3 +49,5 @@ export function loader({ request }: LoaderFunctionArgs) {
     // ],
   }
 }
+
+// Don't render or return anything default, since we need a JSON response

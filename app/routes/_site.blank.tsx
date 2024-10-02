@@ -13,5 +13,9 @@ export const meta: MetaFunction = () =>
   })
 
 export default function BlankRoute() {
-  return <p>Blank Page</p>
+  return (
+    <div>
+      <p>Blank Page</p>
+    </div>
+  )
 }

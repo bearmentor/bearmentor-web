@@ -15,6 +15,7 @@ const ButtonLink = ({
   variant,
   size,
   mode,
+  display,
   className,
   children,
   disabled,
@@ -23,7 +24,7 @@ const ButtonLink = ({
   return (
     <Link
       className={cn(
-        buttonVariants({ variant, size, mode, className }),
+        buttonVariants({ variant, size, mode, display, className }),
         disabled && "pointer-events-none opacity-50",
       )}
       {...props}

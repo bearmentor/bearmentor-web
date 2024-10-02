@@ -1,5 +1,6 @@
 import { type MetaFunction } from "@remix-run/node"
 
+import { IconLeaf } from "~/components/icons/iconify"
 import { ButtonGroup } from "~/components/ui/button-group"
 import { ButtonLink } from "~/components/ui/button-link"
 import {
@@ -35,8 +36,8 @@ function Hero() {
         </SiteHeroDescription>
 
         <ButtonGroup>
-          <ButtonLink to="/bootcamp" mode="cta">
-            Join Online Bootcamp
+          <ButtonLink to="/bootcamp" mode="cta" display="with-icon">
+            <IconLeaf className="size-6" /> Join Online Bootcamp
           </ButtonLink>
           <ButtonLink to="/mentorship" mode="cta" variant="secondary">
             Private Mentorship
