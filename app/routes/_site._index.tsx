@@ -36,11 +36,17 @@ import {
   CardTitle,
 } from "~/components/ui/card"
 import { Flex } from "~/components/ui/flex"
-import { dataFeaturedProjects } from "~/data/featured-projects"
-import { dataMentors } from "~/data/mentors"
-import { dataMentorsCompanies } from "~/data/mentors-companies"
-import { dataReviews } from "~/data/reviews"
-import { dataTechStackItems } from "~/data/tech-stack-items"
+import {
+  dataFeaturedProjects,
+  type FeaturedProject,
+} from "~/data/featured-projects"
+import { dataMentors, type Mentor } from "~/data/mentors"
+import {
+  dataMentorsCompanies,
+  type MentorCompany,
+} from "~/data/mentors-companies"
+import { dataReviews, type Review } from "~/data/reviews"
+import { dataTechStackItems, type TechStackItem } from "~/data/tech-stack-items"
 import {
   SiteHero,
   SiteHeroDescription,
@@ -53,18 +59,13 @@ import { getNameInitials } from "~/utils/string"
 export const meta: MetaFunction = () => createMeta({})
 
 export const loader = async () => {
-  const mentors = dataMentors
-  const mentorsCompanies = dataMentorsCompanies
-  const techStackItems = dataTechStackItems
-  const reviews = dataReviews
-  const featuredProjects = dataFeaturedProjects
-
+  // In the future will fetch some data from API or database
   return json({
-    mentors,
-    mentorsCompanies,
-    techStackItems,
-    reviews,
-    featuredProjects,
+    mentors: dataMentors,
+    mentorsCompanies: dataMentorsCompanies,
+    techStackItems: dataTechStackItems,
+    reviews: dataReviews,
+    featuredProjects: dataFeaturedProjects,
   })
 }
 
@@ -72,14 +73,22 @@ export const loader = async () => {
  * Home Page
  */
 export default function IndexRoute() {
+  const {
+    mentors,
+    mentorsCompanies,
+    techStackItems,
+    reviews,
+    featuredProjects,
+  } = useLoaderData<typeof loader>()
+
   return (
     <div className="space-y-10">
       <Hero />
-      <Mentors />
-      <TechStack />
+      <Mentors mentors={mentors} mentorsCompanies={mentorsCompanies} />
+      <TechStack techStackItems={techStackItems} />
       <FeaturedPrograms />
-      <Reviews />
-      <FeaturedProjects />
+      <Reviews reviews={reviews} />
+      <FeaturedProjects featuredProjects={featuredProjects} />
     </div>
   )
 }
@@ -113,9 +122,13 @@ function Hero() {
   )
 }
 
-function Mentors() {
-  const { mentors, mentorsCompanies } = useLoaderData<typeof loader>()
-
+function Mentors({
+  mentors,
+  mentorsCompanies,
+}: {
+  mentors: Mentor[]
+  mentorsCompanies: MentorCompany[]
+}) {
   return (
     <SectionExplain
       flair={
@@ -183,9 +196,7 @@ function Mentors() {
   )
 }
 
-function TechStack() {
-  const { techStackItems } = useLoaderData<typeof loader>()
-
+function TechStack({ techStackItems }: { techStackItems: TechStackItem[] }) {
   return (
     <SectionExplain
       flair={
@@ -276,9 +287,7 @@ function FeaturedPrograms() {
   )
 }
 
-function Reviews() {
-  const { reviews } = useLoaderData<typeof loader>()
-
+function Reviews({ reviews }: { reviews: Review[] }) {
   return (
     <SectionExplain
       flair={
@@ -304,9 +313,11 @@ function Reviews() {
   )
 }
 
-function FeaturedProjects() {
-  const { featuredProjects } = useLoaderData<typeof loader>()
-
+function FeaturedProjects({
+  featuredProjects,
+}: {
+  featuredProjects: FeaturedProject[]
+}) {
   return (
     <SectionExplain
       flair={
