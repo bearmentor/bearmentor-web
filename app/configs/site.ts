@@ -26,7 +26,8 @@ export const configSite = {
   },
 
   links: {
-    telegram: "https://t.me/bearmentor",
+    telegramGroup: "https://t.me/bearmentor",
+    telegramContact: "https://t.me/mhaidarhanif",
     github: "https://github.com/bearmentor",
     instagram: "https://instagram.com/bearmentorcom",
     twitter: "https://twitter.com/bearmentor",

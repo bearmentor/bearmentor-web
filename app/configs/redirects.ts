@@ -10,7 +10,7 @@ export const configRedirects: ConfigRedirect[] = [
   { path: "/signout", to: "/logout" },
   { path: "/signup", to: "/register" },
   { path: "/twitter", url: configSite.links.twitter },
-  { path: "/telegram", url: configSite.links.telegram },
+  { path: "/telegram", url: configSite.links.telegramGroup },
   { path: "/x", to: "/twitter" },
   { path: "/youtube", url: configSite.links.youtube },
 
