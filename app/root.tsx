@@ -8,25 +8,18 @@ import {
   useRouteError,
 } from "@remix-run/react"
 
-import "~/tailwind.css"
+import "@fontsource-variable/anybody"
+import "@fontsource-variable/inter"
 
+import { configDocumentLinks } from "~/configs/document"
 import { configSite } from "~/configs/site"
 import { createMeta } from "~/utils/meta"
 
+import "~/tailwind.css"
+
 export const meta: MetaFunction = () => createMeta({})
 
-export const links: LinksFunction = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
-]
+export const links: LinksFunction = () => configDocumentLinks
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

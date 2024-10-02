@@ -1,27 +1,28 @@
-import type { Config } from "tailwindcss"
+import defaultTheme from "tailwindcss/defaultTheme"
+
+import { type Config } from "tailwindcss"
 
 export default {
   darkMode: ["class"],
+
   content: ["./app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
     extend: {
+      /**
+       * To add the fonts, setup in app/configs/fonts.ts
+       */
       fontFamily: {
-        sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          "Apple Color Emoji",
-          "Segoe UI Emoji",
-          "Segoe UI Symbol",
-          "Noto Color Emoji",
-        ],
+        display: ["Anybody Variable", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -66,6 +67,7 @@ export default {
       },
     },
   },
+
   plugins: [
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),

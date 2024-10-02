@@ -36,7 +36,7 @@ export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn(
-        "flex max-w-3xl flex-col items-start space-y-6 md:items-center",
+        "flex max-w-4xl flex-col items-start space-y-6 md:items-center",
         "text-left md:text-center",
       )}
     >

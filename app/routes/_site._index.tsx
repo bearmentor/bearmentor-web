@@ -11,6 +11,9 @@ import { createMeta } from "~/utils/meta"
 
 export const meta: MetaFunction = () => createMeta({})
 
+/**
+ * Home Page
+ */
 export default function IndexRoute() {
   return (
     <>
@@ -23,7 +26,7 @@ export default function IndexRoute() {
 function Hero() {
   return (
     <SiteHero backgroundImage="/backgrounds/home.jpg">
-      <aside className="max-w-xl space-y-6">
+      <aside className="max-w-2xl space-y-6">
         <SiteHeroHeading>Grow your career in tech with mentors</SiteHeroHeading>
 
         <SiteHeroDescription>

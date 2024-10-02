@@ -71,7 +71,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply leading-relaxed tracking-tight;
+    @apply font-display leading-relaxed tracking-tight;
   }
   p {
     @apply leading-relaxed;
