@@ -1,19 +1,19 @@
 import { Logo } from "~/components/shared/logo"
 import { NavLink } from "~/components/ui/remix-link"
 
-type NavLink = {
+type NavLinkItem = {
   text: string
   to: string
   mode?: "button"
 }
 
-const leftNavLinks: NavLink[] = [
+const leftNavLinks: NavLinkItem[] = [
   { text: "Mentors", to: "/mentors" },
   { text: "Members", to: "/members" },
   { text: "Projects", to: "/projects" },
 ]
 
-const rightNavLinks: NavLink[] = [
+const rightNavLinks: NavLinkItem[] = [
   { text: "Private Mentorship", to: "/mentorship" },
   { text: "Join Bootcamp", to: "/bootcamp", mode: "button" },
 ]
@@ -38,7 +38,7 @@ export function SiteNavbarLarge() {
   )
 }
 
-export function NavLinks({ navLinks }: { navLinks: NavLink[] }) {
+export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
   return (
     <>
       {navLinks.map(({ text, to }) => (
