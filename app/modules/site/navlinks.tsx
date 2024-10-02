@@ -24,7 +24,7 @@ export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
                 isExternal={isExternal}
                 className={({ isActive }) =>
                   cn(
-                    "hover-opacity font-semibold tracking-tighter",
+                    "focus-ring hover-opacity font-semibold tracking-tighter",
                     isActive && "text-primary",
                   )
                 }

@@ -55,7 +55,7 @@ body {
     --destructive-foreground: 21 5% 90%;
     --border: 21 30% 82%;
     --input: 21 30% 50%;
-    --ring: 21 91.7% 14.1%;
+    --ring: 217 92% 50%;
     --radius: 1rem;
   }
   .dark {
@@ -77,7 +77,7 @@ body {
     --destructive-foreground: 24 5% 90%;
     --border: 24 30% 18%;
     --input: 24 30% 18%;
-    --ring: 24 9.8% 10%;
+    --ring: 217 92% 50%;
     --radius: 0.5rem;
   }
 }
@@ -139,7 +139,7 @@ body {
     @apply transition hover:opacity-75;
   }
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    @apply focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .prose-config {
     @apply prose prose-stone dark:prose-invert focus:outline-none;

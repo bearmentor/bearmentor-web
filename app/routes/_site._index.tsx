@@ -33,13 +33,11 @@ export const loader = async () => {
  */
 export default function IndexRoute() {
   return (
-    <>
+    <div className="space-y-6">
       <Hero />
-      <div className="space-y-10">
-        <Mentors />
-        <TechStack />
-      </div>
-    </>
+      <Mentors />
+      <TechStack />
+    </div>
   )
 }
 

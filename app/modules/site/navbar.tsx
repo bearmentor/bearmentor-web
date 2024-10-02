@@ -1,4 +1,13 @@
+import { useState } from "react"
+
+import { IconMenu } from "~/components/icons/iconify"
 import { Logo } from "~/components/shared/logo"
+import { Button } from "~/components/ui/button"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "~/components/ui/collapsible"
 import { NavLink } from "~/components/ui/remix-link"
 import { NavLinks, type NavLinkItem } from "~/modules/site/navlinks"
 
@@ -28,7 +37,7 @@ export function SiteNavbarLarge() {
       <ul className="flex flex-wrap items-center justify-between gap-5 lg:gap-10">
         <NavLinks navLinks={leftNavLinks} />
         <li>
-          <NavLink to="/">
+          <NavLink to="/" className="focus-ring block">
             <Logo />
           </NavLink>
         </li>
@@ -39,22 +48,31 @@ export function SiteNavbarLarge() {
 }
 
 export function SiteNavbarSmall() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <nav className="px-2">
-      <div className="rounded-3xl border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 p-1 pr-4 shadow md:hidden">
+    <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
+      <div className="rounded-3xl border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 p-1 pr-2 shadow md:hidden">
         <div className="flex items-center justify-between">
-          <NavLink to="/">
+          <NavLink to="/" className="focus-ring block">
             <Logo />
           </NavLink>
 
-          <span>Menu</span>
+          <CollapsibleTrigger asChild>
+            <Button variant="ghost" size="sm">
+              <IconMenu />
+              <span className="sr-only">Menu</span>
+            </Button>
+          </CollapsibleTrigger>
         </div>
       </div>
 
-      <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 bg-background p-4 shadow md:hidden">
-        <NavLinks navLinks={leftNavLinks} />
-        <NavLinks navLinks={rightNavLinks} />
-      </ul>
-    </nav>
+      <CollapsibleContent>
+        <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 bg-background p-4 shadow md:hidden">
+          <NavLinks navLinks={leftNavLinks} />
+          <NavLinks navLinks={rightNavLinks} />
+        </ul>
+      </CollapsibleContent>
+    </Collapsible>
   )
 }

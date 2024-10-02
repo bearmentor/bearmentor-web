@@ -20,10 +20,21 @@ export function useToPreview(to: To) {
   return { toWhere, hasPreview }
 }
 
-export function Link({ to, ...props }: RemixLinkProps & ModifiedLinkProps) {
+export function Link({
+  to,
+  isExternal,
+  ...props
+}: RemixLinkProps & ModifiedLinkProps) {
   const { toWhere } = useToPreview(to)
 
-  return <RemixLink {...props} to={toWhere} />
+  return (
+    <RemixLink
+      {...props}
+      to={toWhere}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noreferrer noopener" : undefined}
+    />
+  )
 }
 
 export function NavLink({
