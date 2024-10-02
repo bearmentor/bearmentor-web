@@ -13,6 +13,7 @@ const buttonVariants = cva(
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/75",
         tertiary: "bg-amber-900 text-amber-50 hover:bg-amber-800",
+
         contact: "bg-cyan-600 text-cyan-50 hover:bg-cyan-700",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/75",
@@ -20,6 +21,11 @@ const buttonVariants = cva(
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+
+        "primary-3d":
+          "transition-opacity border border-emerald-800 bg-gradient-to-b from-primary to-emerald-900 text-primary-foreground hover:opacity-75",
+        "secondary-3d":
+          "transition-opacity border border-border bg-gradient-to-b from-secondary to-amber-100 text-secondary-foreground hover:opacity-75",
       },
       size: {
         md: "h-10 px-4 py-2 rounded-full",

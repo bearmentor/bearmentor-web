@@ -65,6 +65,28 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
       },
+
+      keyframes: {
+        "slide-down": {
+          from: { height: "0px", opacity: "0" },
+          to: {
+            height: "var(--radix-collapsible-content-height)",
+            opacity: "1",
+          },
+        },
+        "slide-up": {
+          from: {
+            height: "var(--radix-collapsible-content-height)",
+            opacity: "1",
+          },
+          to: { height: "0px", opacity: "0" },
+        },
+      },
+
+      animation: {
+        "slide-down": "slide-down 0.2s ease-out",
+        "slide-up": "slide-up 0.2s ease-in",
+      },
     },
   },
 
@@ -72,5 +94,6 @@ export default {
     require("@tailwindcss/typography"),
     require("@tailwindcss/forms"),
     require("tailwindcss-animate"),
+    require("tailwindcss-radix"),
   ],
 } satisfies Config

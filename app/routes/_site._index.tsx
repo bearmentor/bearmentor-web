@@ -92,6 +92,7 @@ function Mentors() {
           </li>
         ))}
       </ul>
+
       <ul className="flex max-w-4xl flex-wrap gap-10">
         {mentorsCompanies.map(mentorCompany => (
           <li
@@ -106,6 +107,12 @@ function Mentors() {
           </li>
         ))}
       </ul>
+
+      <div>
+        <ButtonLink to="/bootcamp" display="with-icon">
+          <IconLeaf className="size-6" /> Join Online Bootcamp
+        </ButtonLink>
+      </div>
     </SectionExplain>
   )
 }

@@ -15,7 +15,7 @@ export function NavLinks({
   onClick,
 }: {
   navLinks: NavLinkItem[]
-  onClick?: () => void
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }) {
   return (
     <>
@@ -26,6 +26,7 @@ export function NavLinks({
           <li key={to}>
             {!component && (
               <NavLink
+                onClick={onClick}
                 to={to}
                 isExternal={isExternal}
                 className={({ isActive }) =>
@@ -34,20 +35,29 @@ export function NavLinks({
                     isActive && "text-primary",
                   )
                 }
-                onClick={onClick}
               >
                 {text}
               </NavLink>
             )}
 
             {component === "button-link" && (
-              <ButtonNavLink to={to} variant="tertiary" mode="navbar">
+              <ButtonNavLink
+                onClick={onClick}
+                to={to}
+                variant="tertiary"
+                mode="navbar"
+              >
                 {text}
               </ButtonNavLink>
             )}
 
             {component === "button-anchor" && (
-              <ButtonAnchor href={to} variant="tertiary" mode="navbar">
+              <ButtonAnchor
+                onClick={onClick}
+                href={to}
+                variant="tertiary"
+                mode="navbar"
+              >
                 {text}
               </ButtonAnchor>
             )}

@@ -82,8 +82,8 @@ export function SiteNavbarSmall() {
         </div>
       </div>
 
-      <CollapsibleContent>
-        <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 bg-background p-4 shadow md:hidden">
+      <CollapsibleContent className="radix-state-open:animate-slide-down radix-state-closed:animate-slide-up overflow-hidden">
+        <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 p-4 shadow md:hidden">
           <NavLinks navLinks={leftNavLinks} onClick={handleLinkClick} />
           <NavLinks navLinks={rightNavLinks} onClick={handleLinkClick} />
         </ul>
