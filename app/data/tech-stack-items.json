@@ -1,0 +1,248 @@
+[
+  {
+    "name": "Figma",
+    "description": "A cloud-based UI design tool for creating and prototyping user interfaces.",
+    "url": "https://figma.com"
+  },
+  {
+    "name": "VS Code",
+    "description": "A lightweight, open-source code editor developed by Microsoft.",
+    "url": "https://code.visualstudio.com"
+  },
+  {
+    "name": "Terminal",
+    "description": "A command-line interface for interacting with the operating system.",
+    "url": "https://en.wikipedia.org/wiki/Computer_terminal"
+  },
+  {
+    "name": "Git",
+    "description": "A version control system for tracking changes in source code.",
+    "url": "https://git-scm.com"
+  },
+  {
+    "name": "GitHub",
+    "description": "A web-based platform for version control and collaboration.",
+    "url": "https://github.com"
+  },
+
+  {
+    "name": "Markdown",
+    "description": "A lightweight markup language with plain-text formatting syntax.",
+    "url": "https://markdownguide.org"
+  },
+  {
+    "name": "HTML",
+    "description": "The standard markup language for creating web pages.",
+    "url": "https://mdn.dev/html"
+  },
+  {
+    "name": "Vercel",
+    "description": "A platform for static site generation and serverless deployment.",
+    "url": "https://vercel.com"
+  },
+  {
+    "name": "Netlify",
+    "description": "A platform for building, deploying, and managing web applications.",
+    "url": "https://netlify.com"
+  },
+  {
+    "name": "CSS",
+    "description": "A style sheet language used for describing the presentation of a document written in HTML or XML.",
+    "url": "https://mdn.dev/css"
+  },
+  {
+    "name": "Tailwind CSS",
+    "description": "A utility-first CSS framework for creating custom designs without having to leave your HTML.",
+    "url": "https://tailwindcss.com"
+  },
+  {
+    "name": "JavaScript",
+    "description": "A versatile programming language primarily used for web development.",
+    "url": "https://mdn.dev/javascript"
+  },
+  {
+    "name": "Node.js",
+    "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    "url": "https://nodejs.org"
+  },
+  {
+    "name": "npm",
+    "description": "A package manager for JavaScript.",
+    "url": "https://npmjs.com"
+  },
+  {
+    "name": "Deno",
+    "description": "A runtime for JavaScript and TypeScript that is secure by default.",
+    "url": "https://deno.land"
+  },
+  {
+    "name": "Bun",
+    "description": "A fast, lightweight, and modern runtime for JavaScript and TypeScript.",
+    "url": "https://bun.sh"
+  },
+  {
+    "name": "TypeScript",
+    "description": "A typed superset of JavaScript that compiles to plain JavaScript.",
+    "url": "https://typescriptlang.org/docs"
+  },
+  {
+    "name": "React",
+    "description": "A JavaScript library for building user interfaces.",
+    "url": "https://react.dev"
+  },
+  {
+    "name": "Storybook",
+    "description": "A tool for building and managing UI components in isolation.",
+    "url": "https://storybook.js.org"
+  },
+  {
+    "name": "React Router",
+    "description": "A popular routing library for React applications.",
+    "url": "https://reactrouter.com"
+  },
+  {
+    "name": "Zod",
+    "description": "A TypeScript-first schema validation library.",
+    "url": "https://zod.dev"
+  },
+  {
+    "name": "TanStack Query",
+    "description": "A caching and data fetching library for React applications.",
+    "url": "https://tanstack.com/query"
+  },
+  {
+    "name": "Cloudflare",
+    "description": "A content delivery network (CDN) and security company.",
+    "url": "https://cloudflare.com"
+  },
+  {
+    "name": "Functional Programming (FP)",
+    "description": "A programming paradigm that treats computation as the evaluation of mathematical functions.",
+    "url": "https://en.wikipedia.org/wiki/Functional_programming"
+  },
+  {
+    "name": "Object-Oriented Programming (OOP)",
+    "description": "A programming paradigm that revolves around the concept of objects and classes.",
+    "url": "https://en.wikipedia.org/wiki/Object-oriented_programming"
+  },
+  {
+    "name": "Vite",
+    "description": "A modern web development server that provides an optimized development experience.",
+    "url": "https://vitejs.dev"
+  },
+  {
+    "name": "REST API",
+    "description": "An architectural style for designing networked applications.",
+    "url": "https://restfulapi.net"
+  },
+  {
+    "name": "GraphQL",
+    "description": "A query language for your API.",
+    "url": "https://graphql.org/learn"
+  },
+  {
+    "name": "Express",
+    "description": "A minimal and flexible Node.js web application framework.",
+    "url": "https://expressjs.com"
+  },
+  {
+    "name": "Hono",
+    "description": "A modern web framework for building fast and scalable web applications.",
+    "url": "https://hono.dev"
+  },
+  {
+    "name": "Postman",
+    "description": "A popular tool for API testing and development.",
+    "url": "https://postman.com"
+  },
+  {
+    "name": "Insomnia",
+    "description": "A popular tool for API testing and development.",
+    "url": "https://insomnia.rest"
+  },
+  {
+    "name": "Docker",
+    "description": "A containerization platform for deploying applications.",
+    "url": "https://docker.com"
+  },
+  {
+    "name": "Docker Compose",
+    "description": "A tool for defining and running multi-container Docker applications.",
+    "url": "https://docs.docker.com/compose"
+  },
+  {
+    "name": "PostgreSQL",
+    "description": "A powerful, open-source object-relational database system.",
+    "url": "https://postgresql.org"
+  },
+  {
+    "name": "MySQL",
+    "description": "A popular open-source relational database management system.",
+    "url": "https://mysql.com"
+  },
+  {
+    "name": "Prisma ORM",
+    "description": "A modern ORM for Node.js and TypeScript.",
+    "url": "https://prisma.io"
+  },
+  {
+    "name": "Remix",
+    "description": "A modern web framework for building fast and scalable web applications.",
+    "url": "https://remix.run"
+  },
+  {
+    "name": "Next.js",
+    "description": "A popular React framework for building server-rendered, statically generated, and performance-optimized websites.",
+    "url": "https://nextjs.org"
+  },
+  {
+    "name": "Redux",
+    "description": "A state management library for JavaScript applications.",
+    "url": "https://redux.js.org"
+  },
+  {
+    "name": "Auth",
+    "description": "A process of verifying the identity of a user, device, or system. Also allowing certain actions.",
+    "url": "https://auth0.com/intro-to-iam/what-is-authentication"
+  },
+  {
+    "name": "JSON Web Token (JWT)",
+    "description": "A compact, URL-safe means of representing claims to be transferred between two parties.",
+    "url": "https://jwt.io"
+  },
+  {
+    "name": "Render.com",
+    "description": "A platform for building, deploying, and managing web applications.",
+    "url": "https://render.com"
+  },
+  {
+    "name": "Vitest",
+    "description": "A fast and lightweight testing framework for Node.js.",
+    "url": "https://vitest.dev"
+  },
+  {
+    "name": "Google Cloud (GCP)",
+    "description": "A suite of cloud computing services offered by Google.",
+    "url": "https://cloud.google.com"
+  },
+  {
+    "name": "Amazon Web Services (AWS)",
+    "description": "A comprehensive cloud computing platform provided by Amazon.",
+    "url": "https://aws.amazon.com"
+  },
+  {
+    "name": "GitHub Projects",
+    "description": "A project management tool integrated with GitHub for organizing and tracking work.",
+    "url": "https://github.com/features/project-management"
+  },
+  {
+    "name": "Team Project",
+    "description": "A collaborative project management tool for teams.",
+    "url": "https://bearmentor.com/projects"
+  },
+  {
+    "name": "Project Management",
+    "description": "The process of planning, organizing, and controlling resources to achieve specific goals.",
+    "url": "https://en.wikipedia.org/wiki/Project_management"
+  }
+]

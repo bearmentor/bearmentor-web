@@ -13,7 +13,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
       <a
         href={href}
         target="_blank"
-        rel="noreferrer"
+        rel="noreferrer noopener"
         className={cn(className)}
         ref={ref}
         {...props}
