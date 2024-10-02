@@ -2,15 +2,27 @@ import { json, type MetaFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 import {
+  EmojiBook,
+  EmojiCamping,
+  EmojiCastle,
   EmojiHerb,
+  EmojiLaptop,
+  EmojiSchool,
   EmojiSeedling,
+  EmojiToolbox,
   EmojiTree,
 } from "~/components/emojis/iconify"
-import { IconBootcamp, IconMentorship } from "~/components/icons/iconify"
+import {
+  IconBootcamp,
+  IconMentorship,
+  IconRead,
+} from "~/components/icons/iconify"
 import { Anchor } from "~/components/ui/anchor"
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
+import { ButtonAnchor } from "~/components/ui/button-anchor"
 import { ButtonGroup } from "~/components/ui/button-group"
 import { ButtonLink } from "~/components/ui/button-link"
+import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
 import { Flex } from "~/components/ui/flex"
 import { dataMentors } from "~/data/mentors"
 import { dataMentorsCompanies } from "~/data/mentors-companies"
@@ -43,6 +55,7 @@ export default function IndexRoute() {
       <Hero />
       <Mentors />
       <TechStack />
+      <FeaturedPrograms />
     </div>
   )
 }
@@ -142,7 +155,13 @@ function TechStack() {
 
   return (
     <SectionExplain
-      flair="📖 🧰 ⚙️️"
+      flair={
+        <Flex>
+          <EmojiBook className="size-10" />
+          <EmojiToolbox className="size-10" />
+          <EmojiLaptop className="size-10" />
+        </Flex>
+      }
       heading="Curriculum, Tech Stack, Tools"
       description="Ever growing collection of learning resources and things to use."
     >
@@ -160,6 +179,66 @@ function TechStack() {
           </li>
         ))}
       </ul>
+    </SectionExplain>
+  )
+}
+
+function FeaturedPrograms() {
+  return (
+    <SectionExplain
+      flair={
+        <Flex>
+          <EmojiCamping className="size-10" />
+          <EmojiSchool className="size-10" />
+          <EmojiCastle className="size-10" />
+        </Flex>
+      }
+      heading="Featured Programs"
+      description="Choose based on your goal, preference, timeline, and budget."
+    >
+      <Card size="tall" className="bg-teal-100">
+        <CardHeader>
+          <CardTitle className="text-balance text-5xl leading-normal">
+            Full Stack Web Development: Online Bootcamp
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ButtonGroup>
+            <ButtonAnchor href="/register" display="with-icon">
+              <IconBootcamp className="size-4" /> Register to Join Bootcamp
+            </ButtonAnchor>
+            <ButtonAnchor
+              href="https://bearmentor.com"
+              display="with-icon"
+              variant="secondary"
+            >
+              <IconRead className="size-4" /> Learn More
+            </ButtonAnchor>
+          </ButtonGroup>
+        </CardContent>
+      </Card>
+
+      <Card size="tall" className="bg-cyan-100">
+        <CardHeader>
+          <CardTitle className="text-balance text-5xl leading-normal">
+            Private 1-on-1 Mentorship: Online or Offline
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ButtonGroup>
+            <ButtonAnchor href="/request" display="with-icon">
+              <IconMentorship className="size-4" /> Request for Mentorship
+            </ButtonAnchor>
+            <ButtonAnchor
+              href="https://bearmentor.com/mentorship"
+              display="with-icon"
+              variant="secondary"
+            >
+              <IconRead className="size-4" /> Learn More
+            </ButtonAnchor>
+          </ButtonGroup>
+        </CardContent>
+      </Card>
     </SectionExplain>
   )
 }

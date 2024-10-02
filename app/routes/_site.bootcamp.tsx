@@ -24,7 +24,7 @@ export default function BootcampRoute() {
 
 function Hero() {
   return (
-    <SiteHero overlayColor="bg-gradient-to-b from-yellow-700 to-yellow-900">
+    <SiteHero overlayColor="bg-gradient-to-b from-teal-700 to-teal-900">
       <aside className="flex w-full flex-col items-center">
         <SiteHeroCenter>
           <SiteHeroHeading>
