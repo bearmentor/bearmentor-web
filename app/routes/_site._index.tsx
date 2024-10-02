@@ -12,6 +12,7 @@ import {
   SiteHeroDescription,
   SiteHeroHeading,
 } from "~/modules/site/hero"
+import { SectionExplain } from "~/modules/site/section-explain"
 import { createMeta } from "~/utils/meta"
 import { getNameInitials } from "~/utils/string"
 
@@ -31,7 +32,9 @@ export default function IndexRoute() {
   return (
     <>
       <Hero />
-      <Mentors />
+      <div className="space-y-10">
+        <Mentors />
+      </div>
     </>
   )
 }
@@ -64,16 +67,12 @@ function Mentors() {
   const { mentors, mentorsCompanies } = useLoaderData<typeof loader>()
 
   return (
-    <section className="site-section space-y-10">
-      <header className="space-y-2">
-        <span className="text-3xl">🌱 🌿 🌳</span>
-        <h2>High Quality Mentors</h2>
-        <p className="max-w-lg text-balance">
-          With true experience between 3 to 14 years of experience in the
-          software industry, from various companies & organizations
-        </p>
-      </header>
-
+    <SectionExplain
+      flair="🌱 🌿 🌳"
+      heading="High Quality Mentors"
+      description="With true experience between 3 to 14 years of experience in the
+          software industry, from various companies & organizations"
+    >
       <ul className="flex max-w-5xl flex-wrap gap-6">
         {mentors.map(mentor => (
           <li
@@ -81,7 +80,7 @@ function Mentors() {
             className="flex w-28 flex-col items-center gap-1"
           >
             <Avatar className="size-24">
-              <AvatarImage src={mentor.imageURL} />
+              <AvatarImage src={`${mentor.imageURL}-/preview/200x200/`} />
               <AvatarFallback className="text-3xl">
                 {getNameInitials(mentor.name)}
               </AvatarFallback>
@@ -91,7 +90,6 @@ function Mentors() {
           </li>
         ))}
       </ul>
-
       <ul className="flex max-w-5xl flex-wrap gap-12">
         {mentorsCompanies.map(mentorCompany => (
           <li
@@ -104,6 +102,6 @@ function Mentors() {
           </li>
         ))}
       </ul>
-    </section>
+    </SectionExplain>
   )
 }
