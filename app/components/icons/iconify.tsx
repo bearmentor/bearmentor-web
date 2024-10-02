@@ -1,9 +1,22 @@
 import {
   MessageCircleQuestion as IconChat,
+  CircleUserRound as IconMember,
+  UserRound as IconMentor,
+  UsersRound as IconMentorship,
   Menu as IconMenu,
+  Projector as IconProject,
+  BookText as IconRead,
 } from "lucide-react"
 
-import IconLeaf from "~icons/fluent/leaf-three-16-filled"
-import IconTree from "~icons/fluent/tree-evergreen-20-filled"
+import IconBootcamp from "~icons/fluent/leaf-three-16-filled"
 
-export { IconTree, IconLeaf, IconChat, IconMenu }
+export {
+  IconBootcamp,
+  IconProject,
+  IconMember,
+  IconMentor,
+  IconMentorship,
+  IconRead,
+  IconChat,
+  IconMenu,
+}

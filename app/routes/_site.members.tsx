@@ -1,5 +1,8 @@
 import { LoaderFunctionArgs, type MetaFunction } from "@remix-run/node"
 
+import { IconMember } from "~/components/icons/iconify"
+import { ButtonAnchor } from "~/components/ui/button-anchor"
+import { ButtonGroup } from "~/components/ui/button-group"
 import { configRedirects } from "~/configs/redirects"
 import {
   SiteHero,
@@ -41,6 +44,17 @@ function Hero() {
             All registered members of Bearmentor Community. Join us and become a
             part of the growing community.
           </SiteHeroDescription>
+
+          <ButtonGroup>
+            <ButtonAnchor
+              href="/members"
+              mode="cta"
+              display="with-icon"
+              variant="secondary"
+            >
+              <IconMember className="size-6" /> See All Members
+            </ButtonAnchor>
+          </ButtonGroup>
         </SiteHeroCenter>
       </aside>
     </SiteHero>

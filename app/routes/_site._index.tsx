@@ -1,7 +1,7 @@
 import { json, type MetaFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
-import { IconLeaf } from "~/components/icons/iconify"
+import { IconBootcamp, IconMentorship } from "~/components/icons/iconify"
 import { Anchor } from "~/components/ui/anchor"
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { ButtonGroup } from "~/components/ui/button-group"
@@ -54,10 +54,15 @@ function Hero() {
 
         <ButtonGroup>
           <ButtonLink to="/bootcamp" mode="cta" display="with-icon">
-            <IconLeaf className="size-6" /> Join Online Bootcamp
+            <IconBootcamp className="size-6" /> Join Online Bootcamp
           </ButtonLink>
-          <ButtonLink to="/mentorship" mode="cta" variant="secondary">
-            Private Mentorship
+          <ButtonLink
+            to="/mentorship"
+            mode="cta"
+            display="with-icon"
+            variant="secondary"
+          >
+            <IconMentorship className="size-6" /> Private Mentorship
           </ButtonLink>
         </ButtonGroup>
       </aside>
@@ -108,11 +113,14 @@ function Mentors() {
         ))}
       </ul>
 
-      <div>
+      <ButtonGroup>
         <ButtonLink to="/bootcamp" display="with-icon">
-          <IconLeaf className="size-6" /> Join Online Bootcamp
+          <IconBootcamp className="size-4" /> Join Online Bootcamp
         </ButtonLink>
-      </div>
+        <ButtonLink to="/mentorship" display="with-icon" variant="secondary">
+          <IconMentorship className="size-4" /> Private Mentorship
+        </ButtonLink>
+      </ButtonGroup>
     </SectionExplain>
   )
 }

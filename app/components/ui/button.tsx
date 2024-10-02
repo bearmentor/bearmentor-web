@@ -35,7 +35,7 @@ const buttonVariants = cva(
       },
       mode: {
         navbar: "font-semibold px-5 py-4",
-        cta: "text-base px-5 py-2 sm:px-7 sm:py-4 md:px-8 md:py-6",
+        cta: "text-sm sm:text-base px-5 py-2 sm:px-7 sm:py-4 md:px-8 md:py-6",
       },
       display: {
         "with-icon": "gap-1",

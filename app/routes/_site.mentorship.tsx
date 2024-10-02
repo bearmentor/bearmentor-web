@@ -1,6 +1,8 @@
 import { type MetaFunction } from "@remix-run/node"
 
-import { ButtonLink } from "~/components/ui/button-link"
+import { IconMentorship, IconRead } from "~/components/icons/iconify"
+import { ButtonAnchor } from "~/components/ui/button-anchor"
+import { ButtonGroup } from "~/components/ui/button-group"
 import {
   SiteHero,
   SiteHeroCenter,
@@ -33,9 +35,19 @@ function Hero() {
             everything you need.
           </SiteHeroDescription>
 
-          <ButtonLink to="/request" mode="cta">
-            Request for Mentorship
-          </ButtonLink>
+          <ButtonGroup>
+            <ButtonAnchor href="/request" mode="cta" display="with-icon">
+              <IconMentorship className="size-6" /> Request for Mentorship
+            </ButtonAnchor>
+            <ButtonAnchor
+              href="https://bearmentor.com/mentorship"
+              mode="cta"
+              display="with-icon"
+              variant="secondary"
+            >
+              <IconRead className="size-6" /> Learn More
+            </ButtonAnchor>
+          </ButtonGroup>
         </SiteHeroCenter>
       </aside>
     </SiteHero>

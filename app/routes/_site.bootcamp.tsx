@@ -1,6 +1,8 @@
 import { type MetaFunction } from "@remix-run/node"
 
-import { ButtonLink } from "~/components/ui/button-link"
+import { IconBootcamp, IconRead } from "~/components/icons/iconify"
+import { ButtonAnchor } from "~/components/ui/button-anchor"
+import { ButtonGroup } from "~/components/ui/button-group"
 import {
   SiteHero,
   SiteHeroCenter,
@@ -36,9 +38,19 @@ function Hero() {
             mentors for 6 months.
           </SiteHeroDescription>
 
-          <ButtonLink to="/register" mode="cta">
-            Register to Join Bootcamp
-          </ButtonLink>
+          <ButtonGroup>
+            <ButtonAnchor href="/register" mode="cta" display="with-icon">
+              <IconBootcamp className="size-6" /> Register to Join Bootcamp
+            </ButtonAnchor>
+            <ButtonAnchor
+              href="https://bearmentor.com"
+              mode="cta"
+              display="with-icon"
+              variant="secondary"
+            >
+              <IconRead className="size-6" /> Learn More
+            </ButtonAnchor>
+          </ButtonGroup>
         </SiteHeroCenter>
       </aside>
     </SiteHero>
