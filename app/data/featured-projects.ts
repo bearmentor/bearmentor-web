@@ -1,7 +1,7 @@
 import featuredProjectsJSON from "~/data/featured-projects.json"
 import { generateNanoIdShort } from "~/utils/string"
 
-export type FeaturedProject = {
+export type Project = {
   id?: string
   title: string
   url: string
@@ -12,7 +12,7 @@ export type FeaturedProject = {
   }[]
 }
 
-export const dataFeaturedProjects: FeaturedProject[] = featuredProjectsJSON.map(
+export const dataFeaturedProjects: Project[] = featuredProjectsJSON.map(
   project => ({
     ...project,
     id: generateNanoIdShort(),
