@@ -42,7 +42,7 @@ export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
 
 export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
   return (
-    <h1 className="text-balance text-3xl font-bold tracking-tight text-amber-50 sm:text-4xl md:text-5xl lg:text-6xl">
+    <h1 className="text-3xl font-bold tracking-tight text-amber-50 sm:text-balance sm:text-4xl md:text-5xl lg:text-6xl">
       {children}
     </h1>
   )
@@ -50,7 +50,7 @@ export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
 
 export function SiteHeroDescription({ children }: React.ComponentProps<"p">) {
   return (
-    <p className="max-w-lg text-sm tracking-tight text-white sm:max-w-2xl sm:text-balance sm:text-sm md:text-base lg:text-lg">
+    <p className="max-w-lg text-sm tracking-tight text-white sm:max-w-xl sm:text-sm md:text-balance md:text-base lg:text-lg">
       {children}
     </p>
   )

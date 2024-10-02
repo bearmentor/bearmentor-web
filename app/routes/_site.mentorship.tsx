@@ -27,7 +27,9 @@ function Hero() {
     <SiteHero overlayColor="bg-gradient-to-b from-cyan-700 to-cyan-900">
       <aside className="flex w-full flex-col items-center">
         <SiteHeroCenter>
-          <SiteHeroHeading>Private 1-on-1 Mentorship</SiteHeroHeading>
+          <SiteHeroHeading>
+            Private <span className="break-keep">1-on-1</span> Mentorship
+          </SiteHeroHeading>
 
           <SiteHeroDescription>
             Struggling to learn alone? With Bearmentor Private Mentorship,

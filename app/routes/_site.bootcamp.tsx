@@ -32,10 +32,9 @@ function Hero() {
           </SiteHeroHeading>
 
           <SiteHeroDescription>
-            Struggling to learn and applying to real projects? With Bearmentor
-            Online Bootcamp, learn the fundamentals and build real-world
-            published projects. Alongside friends and guided by professional
-            mentors for 6 months.
+            Struggling to learn alone? With Bearmentor Online Bootcamp, learn
+            the fundamentals, build real-world projects, and upgrade your
+            career. Alongside friends and professional mentors for 6 months.
           </SiteHeroDescription>
 
           <ButtonGroup>
