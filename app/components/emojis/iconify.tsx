@@ -3,10 +3,13 @@ import EmojiCastle from "~icons/fluent-emoji/castle"
 import EmojiTree from "~icons/fluent-emoji/deciduous-tree"
 import EmojiHerb from "~icons/fluent-emoji/herb"
 import EmojiLaptop from "~icons/fluent-emoji/laptop"
+import EmojiStudentMan from "~icons/fluent-emoji/man-student"
 import EmojiBook from "~icons/fluent-emoji/open-book"
 import EmojiSchool from "~icons/fluent-emoji/school"
 import EmojiSeedling from "~icons/fluent-emoji/seedling"
+import EmojiStudent from "~icons/fluent-emoji/student"
 import EmojiToolbox from "~icons/fluent-emoji/toolbox"
+import EmojiStudentWoman from "~icons/fluent-emoji/woman-student"
 
 export {
   EmojiSeedling,
@@ -18,4 +21,7 @@ export {
   EmojiCamping,
   EmojiSchool,
   EmojiCastle,
+  EmojiStudent,
+  EmojiStudentWoman,
+  EmojiStudentMan,
 }

@@ -9,6 +9,9 @@ import {
   EmojiLaptop,
   EmojiSchool,
   EmojiSeedling,
+  EmojiStudent,
+  EmojiStudentMan,
+  EmojiStudentWoman,
   EmojiToolbox,
   EmojiTree,
 } from "~/components/emojis/iconify"
@@ -26,6 +29,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
 import { Flex } from "~/components/ui/flex"
 import { dataMentors } from "~/data/mentors"
 import { dataMentorsCompanies } from "~/data/mentors-companies"
+import { dataReviews } from "~/data/reviews"
 import { dataTechStackItems } from "~/data/tech-stack-items"
 import {
   SiteHero,
@@ -42,8 +46,14 @@ export const loader = async () => {
   const mentors = dataMentors
   const mentorsCompanies = dataMentorsCompanies
   const techStackItems = dataTechStackItems
+  const reviews = dataReviews
 
-  return json({ mentors, mentorsCompanies, techStackItems })
+  return json({
+    mentors,
+    mentorsCompanies,
+    techStackItems,
+    reviews,
+  })
 }
 
 /**
@@ -56,6 +66,7 @@ export default function IndexRoute() {
       <Mentors />
       <TechStack />
       <FeaturedPrograms />
+      <Reviews />
     </div>
   )
 }
@@ -239,6 +250,34 @@ function FeaturedPrograms() {
           </ButtonGroup>
         </CardContent>
       </Card>
+    </SectionExplain>
+  )
+}
+
+function Reviews() {
+  const { reviews } = useLoaderData<typeof loader>()
+
+  return (
+    <SectionExplain
+      flair={
+        <Flex>
+          <EmojiStudent className="size-10" />
+          <EmojiStudentWoman className="size-10" />
+          <EmojiStudentMan className="size-10" />
+        </Flex>
+      }
+      heading="Trusted by 100+ Learners"
+      description="What they say about us the mentors and learning experience. The student reviews and testimonials."
+    >
+      <ul className="flex max-w-5xl flex-wrap gap-3 sm:gap-6">
+        {reviews.map(review => (
+          <li key={review.user.username}>
+            <Card size="base">
+              <p>{review.text}</p>
+            </Card>
+          </li>
+        ))}
+      </ul>
     </SectionExplain>
   )
 }

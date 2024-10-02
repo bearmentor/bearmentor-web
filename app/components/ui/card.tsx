@@ -11,6 +11,7 @@ const cardVariants = cva(
         default: "bg-card text-card-foreground",
       },
       size: {
+        base: "p-4",
         tall: "px-4 py-12",
       },
     },
