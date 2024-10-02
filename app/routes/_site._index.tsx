@@ -1,11 +1,17 @@
 import { json, type MetaFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
+import {
+  EmojiHerb,
+  EmojiSeedling,
+  EmojiTree,
+} from "~/components/emojis/iconify"
 import { IconBootcamp, IconMentorship } from "~/components/icons/iconify"
 import { Anchor } from "~/components/ui/anchor"
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { ButtonGroup } from "~/components/ui/button-group"
 import { ButtonLink } from "~/components/ui/button-link"
+import { Flex } from "~/components/ui/flex"
 import { dataMentors } from "~/data/mentors"
 import { dataMentorsCompanies } from "~/data/mentors-companies"
 import { dataTechStackItems } from "~/data/tech-stack-items"
@@ -75,7 +81,13 @@ function Mentors() {
 
   return (
     <SectionExplain
-      flair="🌱 🌿 🌳"
+      flair={
+        <Flex>
+          <EmojiSeedling className="size-10" />
+          <EmojiHerb className="size-10" />
+          <EmojiTree className="size-10" />
+        </Flex>
+      }
       heading="High Quality Mentors"
       description="With true experience between 3 to 14 years of experience in the
           software industry, from various companies & organizations"
