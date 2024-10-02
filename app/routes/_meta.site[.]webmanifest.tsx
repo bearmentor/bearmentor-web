@@ -51,3 +51,4 @@ export function loader({ request }: LoaderFunctionArgs) {
 }
 
 // Don't render or return anything default, since we need a JSON response
+// Ignore: Generated an empty chunk: "_meta.site_._webmanifest".

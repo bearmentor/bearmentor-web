@@ -24,7 +24,7 @@ const rightNavLinks: NavLinkItem[] = [
 
 export function SiteNavbar() {
   return (
-    <div className="fixed hidden w-full select-none items-center justify-center px-0 py-4 md:flex">
+    <div className="fixed z-50 hidden w-full select-none items-center justify-center px-0 py-4 md:flex">
       <SiteNavbarLarge />
     </div>
   )

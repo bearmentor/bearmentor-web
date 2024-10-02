@@ -99,7 +99,7 @@ body {
   h4,
   h5,
   h6 {
-    @apply font-display leading-relaxed tracking-tight;
+    @apply font-display font-bold leading-relaxed tracking-tight;
   }
   h1 {
     @apply text-4xl sm:text-5xl;
@@ -130,7 +130,7 @@ body {
 
 @layer components {
   .site-section {
-    @apply mx-auto w-full max-w-6xl px-2;
+    @apply mx-auto w-full max-w-6xl px-4 py-10 xl:px-0;
   }
 }
 

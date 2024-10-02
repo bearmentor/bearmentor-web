@@ -20,7 +20,7 @@ export function SiteHero({
           backgroundSize: "cover",
         }}
         className={cn(
-          "rounded-3xl p-8 pt-16 sm:p-16 sm:pt-24 md:p-24 md:pt-28 lg:p-28 lg:pt-36",
+          "rounded-3xl px-4 pb-8 pt-16 sm:pb-16 sm:pt-24 md:pb-24 md:pt-28 lg:pb-28 lg:pt-36",
           !backgroundImage
             ? overlayColor || "bg-gradient-to-b from-amber-700 to-amber-900"
             : "bg-transparent bg-center",

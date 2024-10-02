@@ -8,7 +8,8 @@
     "css": "app/tailwind.css",
     "baseColor": "stone",
     "cssVariables": true,
-    "prefix": ""
+    "prefix": "",
+    "utils": "~/utils/cn"
   },
   "aliases": {
     "components": "~/components",
