@@ -52,7 +52,7 @@ function Hero() {
               display="with-icon"
               variant="secondary"
             >
-              <IconMember className="size-6" /> See All Members
+              <IconMember className="size-4" /> See All Members
             </ButtonAnchor>
           </ButtonGroup>
         </SiteHeroCenter>

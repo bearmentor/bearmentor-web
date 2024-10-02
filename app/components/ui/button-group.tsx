@@ -1,3 +1,12 @@
-export function ButtonGroup({ children }: React.ComponentProps<"div">) {
-  return <div className="flex flex-wrap gap-4 sm:gap-6">{children}</div>
+import { cn } from "~/utils/cn"
+
+export function ButtonGroup({
+  className,
+  children,
+}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("flex flex-wrap gap-2 sm:gap-4", className)}>
+      {children}
+    </div>
+  )
 }

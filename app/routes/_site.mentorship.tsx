@@ -39,7 +39,7 @@ function Hero() {
 
           <ButtonGroup>
             <ButtonAnchor href="/request" mode="cta" display="with-icon">
-              <IconMentorship className="size-6" /> Request for Mentorship
+              <IconMentorship className="size-4" /> Request for Mentorship
             </ButtonAnchor>
             <ButtonAnchor
               href="https://bearmentor.com/mentorship"
@@ -47,7 +47,7 @@ function Hero() {
               display="with-icon"
               variant="secondary"
             >
-              <IconRead className="size-6" /> Learn More
+              <IconRead className="size-4" /> Learn More
             </ButtonAnchor>
           </ButtonGroup>
         </SiteHeroCenter>

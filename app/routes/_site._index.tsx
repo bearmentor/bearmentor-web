@@ -73,7 +73,7 @@ export const loader = async () => {
  */
 export default function IndexRoute() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-10">
       <Hero />
       <Mentors />
       <TechStack />
@@ -97,7 +97,7 @@ function Hero() {
 
         <ButtonGroup>
           <ButtonLink to="/bootcamp" mode="cta" display="with-icon">
-            <IconBootcamp className="size-6" /> Join Online Bootcamp
+            <IconBootcamp className="size-4" /> Join Online Bootcamp
           </ButtonLink>
           <ButtonLink
             to="/mentorship"
@@ -105,7 +105,7 @@ function Hero() {
             display="with-icon"
             variant="secondary"
           >
-            <IconMentorship className="size-6" /> Private Mentorship
+            <IconMentorship className="size-4" /> Private Mentorship
           </ButtonLink>
         </ButtonGroup>
       </aside>
@@ -129,7 +129,10 @@ function Mentors() {
       description="With true experience between 3 to 14 years of experience in the
           software industry, from various companies & organizations"
     >
-      <ul className="flex max-w-5xl flex-wrap gap-6">
+      <ul
+        id="home-mentors"
+        className="flex max-w-5xl flex-wrap justify-center gap-6 sm:justify-start"
+      >
         {mentors.map(mentor => (
           <li
             key={mentor.slug}
@@ -147,14 +150,20 @@ function Mentors() {
         ))}
       </ul>
 
-      <ul className="flex max-w-4xl flex-wrap gap-10">
+      <ul
+        id="home-mentors-companies"
+        className="flex max-w-4xl flex-wrap justify-center gap-6 px-2 sm:justify-start"
+      >
         {mentorsCompanies.map(mentorCompany => (
           <li
             key={mentorCompany.slug}
-            className="flex w-24 flex-col items-center gap-1 sm:w-28"
+            className="flex w-20 flex-col items-center gap-1 sm:w-28"
           >
-            <Anchor href={mentorCompany.url} className="hover-opacity">
-              <span className="text-md text-center font-bold sm:text-xl">
+            <Anchor
+              href={mentorCompany.url}
+              className="hover-opacity text-center"
+            >
+              <span className="text-md font-bold sm:text-xl">
                 {mentorCompany.name}
               </span>
             </Anchor>
@@ -162,7 +171,7 @@ function Mentors() {
         ))}
       </ul>
 
-      <ButtonGroup>
+      <ButtonGroup className="flex-col sm:flex-row">
         <ButtonLink to="/bootcamp" display="with-icon">
           <IconBootcamp className="size-4" /> Join Online Bootcamp
         </ButtonLink>

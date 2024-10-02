@@ -50,7 +50,7 @@ function Hero() {
               display="with-icon"
               variant="secondary"
             >
-              <IconMentor className="size-6" /> See All Mentors
+              <IconMentor className="size-4" /> See All Mentors
             </ButtonAnchor>
           </ButtonGroup>
         </SiteHeroCenter>

@@ -50,7 +50,7 @@ function Hero() {
               display="with-icon"
               variant="secondary"
             >
-              <IconProject className="size-6" /> See All Projects
+              <IconProject className="size-4" /> See All Projects
             </ButtonAnchor>
           </ButtonGroup>
         </SiteHeroCenter>

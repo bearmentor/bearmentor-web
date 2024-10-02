@@ -39,7 +39,7 @@ function Hero() {
 
           <ButtonGroup>
             <ButtonAnchor href="/register" mode="cta" display="with-icon">
-              <IconBootcamp className="size-6" /> Register to Join Bootcamp
+              <IconBootcamp className="size-4" /> Register to Join Bootcamp
             </ButtonAnchor>
             <ButtonAnchor
               href="https://bearmentor.com"
@@ -47,7 +47,7 @@ function Hero() {
               display="with-icon"
               variant="secondary"
             >
-              <IconRead className="size-6" /> Learn More
+              <IconRead className="size-4" /> Learn More
             </ButtonAnchor>
           </ButtonGroup>
         </SiteHeroCenter>
