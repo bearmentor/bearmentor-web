@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "nusaventure",
+    "title": "Nusaventure",
+    "url": "https://nusaventure.com",
+    "description": "Nusaventure is a platform that helps you find the best places to stay around Indonesia. It's a great way to explore and discover hidden gems.",
+    "repositories": [
+      {
+        "name": "Main",
+        "url": "https://github.com/nusaventure/nusaventure"
+      },
+      {
+        "name": "Frontend",
+        "url": "https://github.com/nusaventure/nusaventure-frontend"
+      },
+      {
+        "name": "Backend",
+        "url": "https://github.com/nusaventure/nusaventure-backend"
+      }
+    ]
+  }
+]

@@ -2,10 +2,13 @@ import { json, type MetaFunction } from "@remix-run/node"
 import { useLoaderData } from "@remix-run/react"
 
 import {
+  EmojiBall,
   EmojiBook,
   EmojiCamping,
   EmojiCastle,
+  EmojiCooking,
   EmojiHerb,
+  EmojiIsland,
   EmojiLaptop,
   EmojiSchool,
   EmojiSeedling,
@@ -25,8 +28,15 @@ import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar"
 import { ButtonAnchor } from "~/components/ui/button-anchor"
 import { ButtonGroup } from "~/components/ui/button-group"
 import { ButtonLink } from "~/components/ui/button-link"
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card"
 import { Flex } from "~/components/ui/flex"
+import { dataFeaturedProjects } from "~/data/featured-projects"
 import { dataMentors } from "~/data/mentors"
 import { dataMentorsCompanies } from "~/data/mentors-companies"
 import { dataReviews } from "~/data/reviews"
@@ -47,12 +57,14 @@ export const loader = async () => {
   const mentorsCompanies = dataMentorsCompanies
   const techStackItems = dataTechStackItems
   const reviews = dataReviews
+  const featuredProjects = dataFeaturedProjects
 
   return json({
     mentors,
     mentorsCompanies,
     techStackItems,
     reviews,
+    featuredProjects,
   })
 }
 
@@ -67,6 +79,7 @@ export default function IndexRoute() {
       <TechStack />
       <FeaturedPrograms />
       <Reviews />
+      <FeaturedProjects />
     </div>
   )
 }
@@ -274,6 +287,37 @@ function Reviews() {
           <li key={review.user.username}>
             <Card size="base">
               <p>{review.text}</p>
+            </Card>
+          </li>
+        ))}
+      </ul>
+    </SectionExplain>
+  )
+}
+
+function FeaturedProjects() {
+  const { featuredProjects } = useLoaderData<typeof loader>()
+
+  return (
+    <SectionExplain
+      flair={
+        <Flex>
+          <EmojiIsland className="size-10" />
+          <EmojiCooking className="size-10" />
+          <EmojiBall className="size-10" />
+        </Flex>
+      }
+      heading="Alumni's Portfolio Projects"
+      description="Things we can learn to build. Proven and published by the students as well."
+    >
+      <ul className="flex max-w-5xl flex-wrap gap-3 sm:gap-6">
+        {featuredProjects.map(featuredProject => (
+          <li key={featuredProject.id}>
+            <Card size="tall" className="max-w-lg">
+              <CardHeader>
+                <CardTitle>{featuredProject.title}</CardTitle>
+                <CardDescription>{featuredProject.description}</CardDescription>
+              </CardHeader>
             </Card>
           </li>
         ))}
