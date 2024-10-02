@@ -1,15 +1,6 @@
 import { Logo } from "~/components/shared/logo"
-import { ButtonAnchor } from "~/components/ui/button-anchor"
-import { ButtonNavLink } from "~/components/ui/button-link"
 import { NavLink } from "~/components/ui/remix-link"
-import { cn } from "~/utils/cn"
-
-type NavLinkItem = {
-  text: string
-  to: string
-  mode?: "external"
-  component?: "link" | "button-link" | "button-anchor"
-}
+import { NavLinks, type NavLinkItem } from "~/modules/site/navlinks"
 
 const leftNavLinks: NavLinkItem[] = [
   { text: "Mentors", to: "/mentors", mode: "external" },
@@ -24,67 +15,46 @@ const rightNavLinks: NavLinkItem[] = [
 
 export function SiteNavbar() {
   return (
-    <div className="fixed z-50 hidden w-full select-none items-center justify-center px-0 py-4 md:flex">
+    <div className="fixed z-50 w-full select-none items-center justify-center px-0 py-2 md:flex md:py-4">
       <SiteNavbarLarge />
+      <SiteNavbarSmall />
     </div>
   )
 }
 
 export function SiteNavbarLarge() {
   return (
-    <nav className="rounded-full border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 py-1 pl-6 pr-1 shadow">
+    <nav className="hidden rounded-full border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 py-1 pl-6 pr-1 shadow md:flex">
       <ul className="flex flex-wrap items-center justify-between gap-5 lg:gap-10">
         <NavLinks navLinks={leftNavLinks} />
-
         <li>
           <NavLink to="/">
             <Logo />
           </NavLink>
         </li>
-
         <NavLinks navLinks={rightNavLinks} />
       </ul>
     </nav>
   )
 }
 
-export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
+export function SiteNavbarSmall() {
   return (
-    <>
-      {navLinks.map(({ text, to, mode, component }) => {
-        const isExternal = mode === "external"
+    <nav className="px-2">
+      <div className="rounded-3xl border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 p-1 pr-4 shadow md:hidden">
+        <div className="flex items-center justify-between">
+          <NavLink to="/">
+            <Logo />
+          </NavLink>
 
-        return (
-          <li key={to}>
-            {!component && (
-              <NavLink
-                to={to}
-                isExternal={isExternal}
-                className={({ isActive }) =>
-                  cn(
-                    "hover-opacity font-semibold tracking-tighter",
-                    isActive && "text-primary",
-                  )
-                }
-              >
-                {text}
-              </NavLink>
-            )}
+          <span>Menu</span>
+        </div>
+      </div>
 
-            {component === "button-link" && (
-              <ButtonNavLink to={to} variant="tertiary" mode="navbar">
-                {text}
-              </ButtonNavLink>
-            )}
-
-            {component === "button-anchor" && (
-              <ButtonAnchor href={to} variant="tertiary" mode="navbar">
-                {text}
-              </ButtonAnchor>
-            )}
-          </li>
-        )
-      })}
-    </>
+      <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 bg-background p-4 shadow md:hidden">
+        <NavLinks navLinks={leftNavLinks} />
+        <NavLinks navLinks={rightNavLinks} />
+      </ul>
+    </nav>
   )
 }
