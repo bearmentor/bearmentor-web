@@ -8,9 +8,6 @@ import {
   useRouteError,
 } from "@remix-run/react"
 
-import "@fontsource-variable/anybody"
-import "@fontsource-variable/inter"
-
 import { configDocumentLinks } from "~/configs/document"
 import { configSite } from "~/configs/site"
 import { createMeta } from "~/utils/meta"
