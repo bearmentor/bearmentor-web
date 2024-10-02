@@ -21,7 +21,9 @@ export function SiteHero({
         }}
         className={cn(
           "rounded-xl p-8 sm:p-16 md:p-24 lg:p-32",
-          !backgroundImage ? overlayColor || "bg-amber-950" : "bg-transparent",
+          !backgroundImage
+            ? overlayColor || "bg-gradient-to-b from-amber-700 to-amber-900"
+            : "bg-transparent bg-center",
         )}
       >
         {children}
@@ -32,7 +34,12 @@ export function SiteHero({
 
 export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
   return (
-    <div className="flex max-w-3xl flex-col items-center space-y-6">
+    <div
+      className={cn(
+        "flex max-w-3xl flex-col items-start space-y-6 md:items-center",
+        "text-left md:text-center",
+      )}
+    >
       {children}
     </div>
   )
@@ -40,7 +47,7 @@ export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
 
 export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
   return (
-    <h1 className="text-4xl font-bold text-amber-50 sm:text-5xl md:text-6xl">
+    <h1 className="text-balance text-3xl font-bold text-amber-50 sm:text-4xl md:text-5xl lg:text-6xl">
       {children}
     </h1>
   )
@@ -48,7 +55,7 @@ export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
 
 export function SiteHeroDescription({ children }: React.ComponentProps<"p">) {
   return (
-    <p className="max-w-xl text-sm text-white sm:text-base md:text-lg">
+    <p className="max-w-2xl text-balance text-sm text-white sm:text-sm md:text-base lg:text-lg">
       {children}
     </p>
   )

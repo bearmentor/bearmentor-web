@@ -21,7 +21,7 @@ const rightNavLinks: NavLink[] = [
 export function SiteNavbarLarge() {
   return (
     <div className="fixed hidden w-full items-center justify-center px-0 py-4 md:flex">
-      <nav className="rounded-full border border-border bg-background px-6 py-1 shadow lg:px-8 lg:py-2">
+      <nav className="rounded-full border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 px-6 py-1 shadow lg:px-8 lg:py-2">
         <ul className="flex flex-wrap items-center justify-between gap-5 lg:gap-10">
           <NavLinks navLinks={leftNavLinks} />
 
