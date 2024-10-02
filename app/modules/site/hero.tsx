@@ -34,12 +34,7 @@ export function SiteHero({
 
 export function SiteHeroCenter({ children }: React.ComponentProps<"div">) {
   return (
-    <div
-      className={cn(
-        "flex max-w-4xl flex-col items-start space-y-6 md:items-center",
-        "text-left md:text-center",
-      )}
-    >
+    <div className="flex w-full max-w-4xl flex-col items-start space-y-6 text-left md:items-center md:text-center">
       {children}
     </div>
   )
@@ -55,7 +50,7 @@ export function SiteHeroHeading({ children }: React.ComponentProps<"h1">) {
 
 export function SiteHeroDescription({ children }: React.ComponentProps<"p">) {
   return (
-    <p className="max-w-2xl text-balance text-sm tracking-tight text-white sm:text-sm md:text-base lg:text-lg">
+    <p className="max-w-lg text-sm tracking-tight text-white sm:max-w-2xl sm:text-balance sm:text-sm md:text-base lg:text-lg">
       {children}
     </p>
   )

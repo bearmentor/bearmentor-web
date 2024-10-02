@@ -10,7 +10,13 @@ export type NavLinkItem = {
   component?: "link" | "button-link" | "button-anchor"
 }
 
-export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
+export function NavLinks({
+  navLinks,
+  onClick,
+}: {
+  navLinks: NavLinkItem[]
+  onClick?: () => void
+}) {
   return (
     <>
       {navLinks.map(({ text, to, mode, component }) => {
@@ -28,6 +34,7 @@ export function NavLinks({ navLinks }: { navLinks: NavLinkItem[] }) {
                     isActive && "text-primary",
                   )
                 }
+                onClick={onClick}
               >
                 {text}
               </NavLink>

@@ -37,7 +37,10 @@ export function SiteNavbarLarge() {
       <ul className="flex flex-wrap items-center justify-between gap-5 lg:gap-10">
         <NavLinks navLinks={leftNavLinks} />
         <li>
-          <NavLink to="/" className="focus-ring block">
+          <NavLink
+            to="/"
+            className="focus-ring block transition hover:scale-105"
+          >
             <Logo />
           </NavLink>
         </li>
@@ -50,16 +53,28 @@ export function SiteNavbarLarge() {
 export function SiteNavbarSmall() {
   const [isOpen, setIsOpen] = useState(false)
 
+  const handleLinkClick = () => {
+    setIsOpen(false)
+  }
+
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen} className="px-2">
       <div className="rounded-3xl border border-border bg-background bg-gradient-to-b from-amber-50 to-amber-100 p-1 pr-2 shadow md:hidden">
         <div className="flex items-center justify-between">
-          <NavLink to="/" className="focus-ring block">
+          <NavLink
+            to="/"
+            className="focus-ring block"
+            onClick={handleLinkClick}
+          >
             <Logo />
           </NavLink>
 
           <CollapsibleTrigger asChild>
-            <Button variant="ghost" size="sm">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+            >
               <IconMenu />
               <span className="sr-only">Menu</span>
             </Button>
@@ -69,8 +84,8 @@ export function SiteNavbarSmall() {
 
       <CollapsibleContent>
         <ul className="mt-2 flex flex-col items-end gap-4 rounded-3xl border border-border bg-amber-100 bg-background p-4 shadow md:hidden">
-          <NavLinks navLinks={leftNavLinks} />
-          <NavLinks navLinks={rightNavLinks} />
+          <NavLinks navLinks={leftNavLinks} onClick={handleLinkClick} />
+          <NavLinks navLinks={rightNavLinks} onClick={handleLinkClick} />
         </ul>
       </CollapsibleContent>
     </Collapsible>
