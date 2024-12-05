@@ -1,8 +1,13 @@
-import { type LinksFunction, type MetaFunction } from "@remix-run/node"
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from "@remix-run/node"
 import {
   Links,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration,
   useRouteError,
@@ -17,6 +22,11 @@ import "~/tailwind.css"
 export const meta: MetaFunction = () => createMeta({})
 
 export const links: LinksFunction = () => configDocumentLinks
+
+// Temporary redirect
+export const loader: LoaderFunction = async () => {
+  return redirect("https://bearmentor.com", 307)
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
