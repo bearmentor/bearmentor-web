@@ -15,7 +15,7 @@ export const configSite = {
 
   // Recommended: 155-160 characters
   description:
-    "Struggling to learn alone? With Bearmentor, achieve your goals together with supportive community of mentors and professionals.",
+    "With Bearmentor, achieve your career goals with supportive community of mentors and professionals.",
 
   languageCode: "en",
   countryCode: "US",

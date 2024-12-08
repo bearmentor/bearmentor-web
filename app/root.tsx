@@ -1,6 +1,7 @@
 import type {
   LinksFunction,
   LoaderFunction,
+  LoaderFunctionArgs,
   MetaFunction,
 } from "@remix-run/node"
 import {
@@ -16,6 +17,7 @@ import {
 import { configDocumentLinks } from "~/configs/document"
 import { configSite } from "~/configs/site"
 import { createMeta } from "~/utils/meta"
+import { shouldRedirect } from "~/utils/redirect-route.server"
 
 import "~/tailwind.css"
 
@@ -23,9 +25,14 @@ export const meta: MetaFunction = () => createMeta({})
 
 export const links: LinksFunction = () => configDocumentLinks
 
-// Temporary redirect
-export const loader: LoaderFunction = async () => {
-  return redirect("https://bearmentor.com", 307)
+export const loader: LoaderFunction = async ({
+  request,
+}: LoaderFunctionArgs) => {
+  if (shouldRedirect(request)) {
+    // Temporary redirect
+    return redirect("https://bearmentor.com", 307)
+  }
+  return null
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {
